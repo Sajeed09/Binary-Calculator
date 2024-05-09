@@ -3,32 +3,26 @@ def decimal_to_binary(num):
 	num = int(num)
 	result = bin(num)
 	return result[2:]
-
 def binary_to_decimal(num):
 	return int(num, 2)
-
 def binary_checker(string):
 	for x in string:
 		if x != "1" and x != "0":
 			print "You entered an invalid Binary Number."
 			return False
 	return True
-
 def binary_checker_operations(string):
 	for x in string:
 		if x != "1" and x != "0":
 			return False
 	return True
-
 def operation_checker(input):
 	if operations.count(input) > 0:
 		return True
 	return False
-
 def perform_calculation(input_equation):
 	a = input_equation[0]
 	b = input_equation[2]
-
 	if input_equation[1] == "+":
 		return a + b 
 	elif input_equation[1] == "-":
@@ -41,19 +35,15 @@ def perform_calculation(input_equation):
 		return a << b 
 	else:
 		return a >> b
-
 #----- Start, Welcome Message -----#
 does_continue = "yes"	# for to keep the calculator going
 bin_check_array = ["0", "1"]
 operations = ["+", "-", "*", "/", "<<", ">>"]
-
 print "Welcome to my Binary Calculator"
 print "-Type 'convert' to convert a binary to decimal or vice versa"
 print "-Type 'calculate' to perform any calculations with binary values"
-
 while does_continue == "yes" or does_continue == "y":
 	perform = raw_input("\nWhat do you want me to help you with: convert or calculate?")
-
 	# perform the conversion from binary to decimal or vice versa
 	if perform == "convert":
 		convert_continue = "y"
@@ -80,7 +70,6 @@ while does_continue == "yes" or does_continue == "y":
 		does_continue = raw_input("Do you want to keep using this calculator: yes(y) or no(n)?")
 		if does_continue == "n" or convert_continue == "no":
 			print "Finished!"
-	
 	# perform computation given binary numbers
 	# currently only able to handle single equations per calculation
 	elif perform == "calculate":
@@ -115,11 +104,9 @@ while does_continue == "yes" or does_continue == "y":
 				result = str(bin(result))
 				print "Your equation: " + user_equation[0] + " " + user_equation[1] + " " + user_equation[2] + " = " + result[2:]
 				keep_prompting = raw_input("\nDo you wish to continue solving equations: yes(y) or no(n)?")
-				
 		does_continue = raw_input("Do you want to keep using this calculator: yes(y) or no(n)?")
 		if does_continue == "n" or does_continue == "no":
 			print "Finished!"
-
 	# else return an error message on wrong input
 	else:
 		print "You entered an invalid option"
